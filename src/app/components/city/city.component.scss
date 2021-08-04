@@ -1,0 +1,116 @@
+.cardDimensions {
+  min-height: 300px;
+  margin: 50px;
+}
+
+h1.tempClass {
+  padding: 4px;
+  padding-left: 37px;
+  font-style: italic !important;
+  color: #ffa500;
+  font-size: 35px;
+}
+
+h2.tempClass {
+  padding: 4px;
+  padding-left: 37px;
+  font-style: italic !important;
+  color: #ffa500;
+  font-size: 13px;
+}
+
+h2 span > .tempSign {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.container {
+  display: flex;
+}
+
+.column-1 {
+  flex-shrink: 0; /* shrinks to 0 to apply 70% width*/
+  flex-basis: 80%; /* sets initial width to 70% */
+}
+
+h2.heading {
+  font-size: 64px;
+  font-style: italic;
+  font-weight: lighter;
+  //padding: 60px;
+  color: #88a6d3;
+
+  line-height: 85px;
+}
+
+p.subheading {
+  font-size: 24px;
+  font-style: italic;
+  color: #ffa500;
+}
+
+span.tempSign {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.mainheading {
+  font-size: 34px;
+  font-style: italic;
+  font-weight: revert;
+  padding: 0px 60px 60px 60px;
+  text-align: left;
+  color: #ffc300;
+  line-height: 36px;
+}
+
+.btnAlign {
+  padding: 20px 60px 0px 60px;
+  text-align: left;
+}
+
+.mat-flat-button.mat-warn,
+.mat-raised-button.mat-warn,
+.mat-fab.mat-warn,
+.mat-mini-fab.mat-warn {
+  background-color: #ffa500;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    /* it place the items in vertical direction */
+    flex-direction: column;
+  }
+
+  .box {
+    margin: 0 0 1rem;
+  }
+}
+
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+
+/* Create four equal columns */
+.column {
+  flex: 20%;
+  padding: 20px;
+  text-align: right;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}

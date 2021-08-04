@@ -1,1 +1,57 @@
-<div>You are at landing page</div>
+<div  class="mainheading">
+
+  City weather forecast {{cityName}}
+  <span>
+    <img
+          src="assets/images/cloudy-day-1.svg"
+          alt="sunny day"
+          height="100"
+        />
+  </span>
+  <br><span class="submainHeading">
+    {{CONSTANTS.LABELS.SUB_MAIN_HEADING}}
+  </span>
+</div>
+<div *ngFor="let city of citylist">
+  <mat-card
+    class="cardDimensions"
+    (click)="nextStep(city.name)"
+  >
+  <div class="container">
+    <div class="column-2 box">
+        <div >
+        <img
+          src="assets/images/cloudy-day-1.svg"
+          alt="Girl in a jacket"
+          height="190"
+        />
+        <h1 class="tempClass">{{ city.name }}</h1>
+        <h2 class="tempClass"> Current Temp: {{city.main.temp}} <span class="tempSign">&#8457;</span></h2>
+      </div>
+    </div>
+    <div class="column-1 box">
+      <div class="row">
+        <div class="column" >
+          <h2 class="heading">{{city.main.temp_min}} <span class="tempSign">&#8457;</span></h2>
+          <p class="subheading">{{CONSTANTS.LABELS.MIN}}</p>
+        </div>
+
+        <div class="column" >
+          <h2 class="heading">{{city.main.temp_max}} <span class="tempSign">&#8457;</span></h2>
+          <p class="subheading">{{CONSTANTS.LABELS.MAX}}</p>
+        </div>
+
+        <div class="column" >
+          <h2 class="heading">{{city.wind.speed}}</h2>
+          <p class="subheading">{{CONSTANTS.LABELS.WIND_SPEED}}</p>
+        </div>
+
+        <div class="column">
+          <h2 class="heading">{{city.main.humidity}}</h2>
+          <p class="subheading">{{CONSTANTS.LABELS.HUMDITY}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+  </mat-card>
+</div>

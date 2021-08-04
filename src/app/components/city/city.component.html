@@ -1,1 +1,52 @@
-<div>You are at landing page</div>
+<div class="example-button-container btnAlign">
+  <button
+    type="button"
+    (click)="clickBack()"
+    mat-fab
+    color="warn"
+    aria-label="Example icon button with a home icon"
+  >
+    <mat-icon>home</mat-icon>
+  </button>
+</div>
+
+<div class="mainheading">
+  Next five day weather forecast for {{ cityName }}
+  <span>
+    <img src="assets/images/cloudy-day-1.svg" alt="sunny day" height="100" />
+  </span>
+</div>
+<div *ngFor="let array of filteredArray">
+  <mat-card class="cardDimensions" (click)="nextStep(city.name)">
+    <div class="container">
+      <div class="column-2 box">
+        <div class="column-l">
+          <img
+            src="assets/images/cloudy-day-1.svg"
+            alt="cloudy day"
+            height="250"
+          />
+          <h1 class="tempClass">{{ array.dt_txt | date: "short" }}</h1>
+        </div>
+      </div>
+      <div class="column-1 box">
+        <div class="row">
+          <div class="column">
+            <h2 class="heading">
+              {{ array.main.temp }} <span class="tempSign">&#8457;</span>
+            </h2>
+            <p class="subheading">{{CONSTANTS.LABELS.TEMP_FORECAST}}</p>
+          </div>
+          <div class="column">
+            <h2 class="heading">{{ array.main.sea_level }}</h2>
+            <p class="subheading">{{CONSTANTS.LABELS.SEA_LEVEL}}</p>
+          </div>
+          <div class="column">
+            <h2 class="heading">{{ array.main.grnd_level }}</h2>
+            <p class="subheading">{{CONSTANTS.LABELS.GRND_LEVEL}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
