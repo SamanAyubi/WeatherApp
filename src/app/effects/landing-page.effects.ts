@@ -27,7 +27,6 @@ export class LandingPageEffects {
         return this.http.get(this.ApiURL).pipe(
           map((data) => {
             // Dispatching success action
-            console.log('data', data);
             return loadLandingPagesSuccess({ response: data });
           }),
            // throw error

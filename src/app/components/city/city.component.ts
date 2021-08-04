@@ -7,8 +7,6 @@ import { UI_CONSTANT } from '../../constants/ui.constants';
 
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'city-page',
@@ -26,9 +24,7 @@ export class CityComponent implements OnInit, OnDestroy {
 
   constructor(
     public store: Store<fromRoot.landingPageState>,
-    public router: Router,
-    public route: ActivatedRoute,
-    public location: Location
+    public router: Router
   ) {
     this.cityForecast$ = store.select(fromRoot.selectFeature);
   }
@@ -58,7 +54,7 @@ export class CityComponent implements OnInit, OnDestroy {
   }
 
   public clickBack(): void {
-    this.location.back();
+    this.router.navigate(['/home']);
   }
 
   ngOnDestroy() {
